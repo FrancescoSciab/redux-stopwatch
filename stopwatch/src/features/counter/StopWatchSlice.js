@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const counterSlice = createSlice({
-    name: 'counter',
+export const stopwatchSlice = createSlice({
+    name: 'stopwatch',
     initialState: {
-        value: 0
+        value: 30
     },
     reducers: {
         increment: {
@@ -21,12 +21,17 @@ export const counterSlice = createSlice({
         reset: {
             //function to reset
         },
-        decrement: {
+        decrement: state => {
             //function to decrement
+            for (let i = 0; i < state.value; i++) {
+                state.value--
+            }
         }
     }
 })
 
-export const { increment, start, stop, lap, reset, decrement} = counterSlice.actions
+export const { increment, start, stop, lap, reset, decrement} = stopwatchSlice.actions
 
-export default counterSlice.reducer
+export const selectCount = (state) => state.stopwatch.value
+
+export default stopwatchSlice.reducer

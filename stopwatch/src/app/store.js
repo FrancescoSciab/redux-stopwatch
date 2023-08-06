@@ -1,5 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
+import stopwatchReducer from "../features/counter/StopWatchSlice"
 
 export default configureStore({
-    reducer: {}
+    reducer: {
+        stopwatch: stopwatchReducer
+    },
 })
