@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const stopwatchSlice = createSlice({
     name: 'stopwatch',
     initialState: {
-        value: 30
+        value: 2
     },
     reducers: {
         increment: {
@@ -23,7 +23,7 @@ export const stopwatchSlice = createSlice({
         },
         decrement: state => {
             //function to decrement
-            for (let i = 0; i < state.value; i++) {
+            if(state.value > 0) {
                 state.value--
             }
         }
