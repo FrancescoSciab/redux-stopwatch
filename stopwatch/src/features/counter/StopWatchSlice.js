@@ -6,8 +6,9 @@ export const stopwatchSlice = createSlice({
         value: 2
     },
     reducers: {
-        increment: {
+        increment: state => {
             //function to increment
+            state.value++
         },
         start: {
             //function to start
