@@ -10,8 +10,11 @@ export const stopwatchSlice = createSlice({
             //function to increment
             state.value++
         },
-        start: {
+        start: state => {
             //function to start
+            while (state.value > 0) {
+                setInterval(state.value--, 1000)
+            }
         },
         stop: {
             //function to stop

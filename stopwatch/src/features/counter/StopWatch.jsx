@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment, selectCount } from './StopWatchSlice'
+import { increment, start, decrement, selectCount } from './StopWatchSlice'
 
 
 export function StopWatch() {
@@ -20,7 +20,7 @@ export function StopWatch() {
         
               <div>
                 <button onClick={() => dispatch(increment())}>+</button>
-                <button>Start</button>
+                <button onClick={() => dispatch(start())}>Start</button>
                 <button>Stop</button>
                 <button>Lap</button>
                 <button>Reset</button>
