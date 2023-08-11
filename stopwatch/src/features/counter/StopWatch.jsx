@@ -7,6 +7,10 @@ export function StopWatch() {
     const count = useSelector(selectCount)
     const dispatch = useDispatch()
 
+    function startTimer() {
+      () => dispatch(start())
+    }
+
     return (
         <>
             <div>
@@ -20,7 +24,7 @@ export function StopWatch() {
         
               <div>
                 <button onClick={() => dispatch(increment())}>+</button>
-                <button onClick={() => dispatch(start())}>Start</button>
+                <button onClick={() => setTimeout(startTimer(), 1000)}>Start</button>
                 <button>Stop</button>
                 <button>Lap</button>
                 <button>Reset</button>

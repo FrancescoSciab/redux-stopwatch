@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const stopwatchSlice = createSlice({
     name: 'stopwatch',
     initialState: {
-        value: 2
+        value: 4
     },
     reducers: {
         increment: state => {
@@ -12,8 +12,8 @@ export const stopwatchSlice = createSlice({
         },
         start: state => {
             //function to start
-            while (state.value > 0) {
-                setInterval(state.value--, 1000)
+            if(state.value > 0) {
+                state.value--
             }
         },
         stop: {
